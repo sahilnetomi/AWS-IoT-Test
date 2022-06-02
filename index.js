@@ -4,7 +4,7 @@ const AWS = require('aws-sdk')
 const STS = new AWS.STS();
 const params = {
   DurationSeconds: 3600,
-  RoleArn: 'arn:aws:iam::817265962114:role/dev-ecs-task-IotChatWidget',
+  RoleArn: 'arn:aws:iam::721846126987:role/RnD-Terraform-Test',
   RoleSessionName: 'CHAT_WIDGET'
 };
 STS.assumeRole(params, (err, data) => {
@@ -13,7 +13,7 @@ STS.assumeRole(params, (err, data) => {
   }
   else {
     console.log('DATA FROM STS ASSUME ROLE', data)
-  }  
+  }
 })
 
 // Using EC2 metadata
