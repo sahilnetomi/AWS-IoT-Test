@@ -1,5 +1,7 @@
 const AWS = require('aws-sdk')
 
+const axios = require('axios');
+
 // Using STS
 // const STS = new AWS.STS();
 // const params = {
@@ -30,3 +32,5 @@ const data = new AWS.MetadataService({
   retryDelayOptions: { base: 200 }, // see AWS.Config for information
 })
 console.log('DATA FROM EC2 METADATA', data)
+
+axios.get('http://169.254.169.254').then((data) => console.log('FETCH API', data)).catch((err) => console.log('FETCH API', err))
