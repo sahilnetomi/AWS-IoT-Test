@@ -34,7 +34,7 @@ const data = new AWS.MetadataService({
 console.log('DATA FROM EC2 METADATA', data)
 
 axios
-  .get('http://169.254.169.254')
+  .get('http://169.254.169.254/latest/meta-data/iam/security-credentials/RnD-Terraform-Test')
   .then((resp) => {
     console.log('FETCH API', typeof resp.data)
   })
